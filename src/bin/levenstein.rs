@@ -7,22 +7,21 @@ fn main() {
 }
 
 fn lev(a: &str, b: &str) -> usize {
-    if a.len() == 0 || b.len() == 0 {
-        return a.len() + b.len();
-    }
-
     let mut ac = a.chars();
     let mut bc = b.chars();
+    if a.is_empty() || b.is_empty() {
+        return ac.count() + bc.count();
+    }
 
-    let ha = ac.nth(0).unwrap();
-    let hb = bc.nth(0).unwrap();
+    let ha = ac.next().unwrap();
+    let hb = bc.next().unwrap();
 
-    let ta: &str = ac.as_str();
-    let tb: &str = bc.as_str();
+    let ta = ac.as_str();
+    let tb = bc.as_str();
 
     if ha == hb {
         return lev(ta, tb);
     }
 
-    return 1 + lev(a, tb).min(lev(ta, b)).min(lev(ta, tb));
+    1 + lev(a, tb).min(lev(ta, b)).min(lev(ta, tb))
 }
