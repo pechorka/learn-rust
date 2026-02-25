@@ -1,4 +1,4 @@
-use learn_rust::{Strategy, levenshtein};
+use learn_rust::algorithms::levenshtein::{Strategy, levenshtein};
 
 fn main() {
     let mut args = std::env::args().skip(1);
@@ -14,7 +14,7 @@ fn main() {
     let lev_dist = levenshtein(&a, &b, strategy);
 
     println!(
-        "Levenstein distance between a={a} and b={b} using strategy {:?} is {lev_dist}",
+        "Levenshtein distance between a={a} and b={b} using strategy {:?} is {lev_dist}",
         strategy,
     );
 }

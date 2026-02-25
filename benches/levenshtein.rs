@@ -1,5 +1,5 @@
 use criterion::{Criterion, black_box, criterion_group, criterion_main};
-use learn_rust::{lev_idiomatic, lev_matrix, lev_naive};
+use learn_rust::algorithms::levenshtein::{lev_idiomatic, lev_matrix, lev_naive};
 
 fn bench_implementations(c: &mut Criterion) {
     let mut group = c.benchmark_group("levenshtein");
